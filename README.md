@@ -54,13 +54,6 @@ npm test  # Run test suite
 
 MIT License - feel free to use this for your own coffee shop!
 
-## ☕ Support
+Kenyan coffee in the heart of Nakuru!**
 
-For support or questions:
-- Email: hello@nakurucoffee.co.ke
-- Phone: +254 712 345 678
-
-
-
-**Proudly serving premium Kenyan coffee in the heart of Nakuru!**
 
