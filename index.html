@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakuru Coffee House - Premium Coffee in Kenya</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="coffee-icon">☕</span>
+                <span class="logo-text">Nakuru Coffee House</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#order" class="nav-link">Order</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact-form" class="nav-link">Contact</a></li>
+                <li><a href="#order" class="nav-link cart-icon">
+                    <span class="cart-count" id="cartCount">0</span>
+                    🛒
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&h=1080&fit=crop&crop=center" alt="Coffee Shop Background" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Welcome to Nakuru Coffee House</h1>
+            <p class="hero-subtitle fade-in-delay">Premium Kenyan Coffee in the Heart of Nakuru</p>
+            <div class="hero-buttons fade-in-delay-2">
+                <button class="cta-button" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">Explore Our Menu</button>
+                <button class="secondary-button" onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'})">Order Now</button>
+            </div>
+        </div>
+        <div class="coffee-beans animated-beans"></div>
+        <div class="floating-coffee-cups">
+            <div class="coffee-cup float-1">☕</div>
+            <div class="coffee-cup float-2">♨️</div>
+            <div class="coffee-cup float-3">🥤</div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item slide-in-left">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1510550760185-1e5a9b1c5c99?w=400&h=300&fit=crop&crop=center" alt="Kenyan Espresso" class="coffee-img">
+                    </div>
+                    <h3>Kenyan Espresso</h3>
+                    <p>Rich, bold AA grade Kenyan coffee with wine-like acidity</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 450</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(1, 'Kenyan Espresso', 450)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-up">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1549060279-7e168ccee14b?w=400&h=300&fit=crop&crop=center" alt="Cappuccino" class="coffee-img">
+                    </div>
+                    <h3>Cappuccino</h3>
+                    <p>Classic Italian style with velvety microfoam art</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 550</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(2, 'Cappuccino', 550)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-right">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1532938125485-7211e1165a84?w=400&h=300&fit=crop&crop=center" alt="Latte" class="coffee-img">
+                    </div>
+                    <h3>Latte</h3>
+                    <p>Smooth espresso with creamy steamed milk</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 600</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(3, 'Latte', 600)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-left">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center" alt="Americano" class="coffee-img">
+                    </div>
+                    <h3>Americano</h3>
+                    <p>Kenyan espresso with hot water for a smooth taste</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 400</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(4, 'Americano', 400)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-up">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1572442388486-a885a88a9361?w=400&h=300&fit=crop&crop=center" alt="Mocha" class="coffee-img">
+                    </div>
+                    <h3>Mocha</h3>
+                    <p>Chocolate espresso with steamed milk and whipped cream</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 650</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(5, 'Mocha', 650)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-right">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1534752182431-1f5e2c2e3d3b?w=400&h=300&fit=crop&crop=center" alt="Caramel Macchiato" class="coffee-img">
+                    </div>
+                    <h3>Caramel Macchiato</h3>
+                    <p>Vanilla, espresso, steamed milk, and caramel drizzle</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 700</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(6, 'Caramel Macchiato', 700)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-left">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400&h=300&fit=crop&crop=center" alt="Matcha Latte" class="coffee-img">
+                    </div>
+                    <h3>Matcha Latte</h3>
+                    <p>Premium Japanese matcha with steamed milk</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 750</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(7, 'Matcha Latte', 750)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-up">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cda9?w=400&h=300&fit=crop&crop=center" alt="Flat White" class="coffee-img">
+                    </div>
+                    <h3>Flat White</h3>
+                    <p>Australian style with double ristretto and microfoam</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 580</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(8, 'Flat White', 580)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-right">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&crop=center" alt="Turkish Coffee" class="coffee-img">
+                    </div>
+                    <h3>Turkish Coffee</h3>
+                    <p>Traditional finely ground coffee with cardamom</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 480</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(9, 'Turkish Coffee', 480)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-left">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1559491565-c770c18e0d59?w=400&h=300&fit=crop&crop=center" alt="Cold Brew" class="coffee-img">
+                    </div>
+                    <h3>Cold Brew</h3>
+                    <p>24-hour steeped Kenyan AA coffee, served over ice</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 520</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(10, 'Cold Brew', 520)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-up">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center" alt="Hibiscus Tea" class="coffee-img">
+                    </div>
+                    <h3>Hibiscus Tea</h3>
+                    <p>Refreshing Kenyan hibiscus infusion, served hot or cold</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 350</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(11, 'Hibiscus Tea', 350)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item slide-in-right">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1571875493083-4b78c1b3b8b8?w=400&h=300&fit=crop&crop=center" alt="Affogato" class="coffee-img">
+                    </div>
+                    <h3>Affogato</h3>
+                    <p>Vanilla ice cream topped with hot espresso shot</p>
+                    <div class="item-footer">
+                        <span class="price">Ksh 680</span>
+                        <button class="add-to-cart-btn" onclick="addToCart(12, 'Affogato', 680)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>Our Nakuru Story</h2>
+                    <p>Founded in 2020, Nakuru Coffee House brings premium coffee culture to the heart of Kenya's Rift Valley. We source our beans directly from local Kenyan farms, supporting our community while delivering exceptional coffee.</p>
+                    <p>Located in beautiful Nakuru city, we roast our beans in-house to bring out the unique flavors and aromas that Kenyan AA coffee is famous for - bright acidity, wine-like flavor notes, and rich body.</p>
+                    <p>Whether you're a local resident, tourist visiting Lake Nakuru, or business professional, our coffee house offers the perfect blend of Kenyan hospitality and world-class coffee.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <span class="feature-icon">☕</span>
+                            <div>
+                                <h4>Premium Kenyan Beans</h4>
+                                <p>Sourced directly from local farms</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🔥</span>
+                            <div>
+                                <h4>Freshly Roasted</h4>
+                                <p>Daily in-house roasting for maximum flavor</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌍</span>
+                            <div>
+                                <h4>Community Focused</h4>
+                                <p>Supporting local Kenyan farmers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in-delay">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&h=600&fit=crop&crop=center" alt="Nakuru Coffee House Interior" class="about-img">
+                    <div class="image-overlay">
+                        <div class="overlay-text">
+                            <h3>Visit Us Today</h3>
+                            <p>Experience the best Kenyan coffee in Nakuru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="John M" class="reviewer-avatar">
+                            <div>
+                                <h4>John Mwangi</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <span class="review-date">2 days ago</span>
+                    </div>
+                    <p>"Best Kenyan coffee in Nakuru! The espresso is rich and authentic. Love the atmosphere too!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" alt="Sarah K" class="reviewer-avatar">
+                            <div>
+                                <h4>Sarah Kimani</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <span class="review-date">1 week ago</span>
+                    </div>
+                    <p>"Their cappuccino is perfect! Great service and beautiful ambiance. Highly recommend!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face" alt="David O" class="reviewer-avatar">
+                            <div>
+                                <h4>David Odhiambo</h4>
+                                <div class="rating">⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <span class="review-date">2 weeks ago</span>
+                    </div>
+                    <p>"Excellent cold brew and the matcha latte is surprisingly good. Will definitely come back!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://images.unsplash.com/photo-1580489945982-30e1bc827429?w=50&h=50&fit=crop&crop=face" alt="Grace A" class="reviewer-avatar">
+                            <div>
+                                <h4>Grace Atieno</h4>
+                                <div class="rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <span class="review-date">3 weeks ago</span>
+                    </div>
+                    <p>"Perfect place for business meetings. Great WiFi and amazing Turkish coffee!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <div class="order-intro">
+                <p>Experience the best Kenyan coffee in Nakuru! Order online for pickup or delivery.</p>
+                <div class="order-badges">
+                    <span class="badge">🚚 Fast Service</span>
+                    <span class="badge">☕ Fresh Coffee</span>
+                    <span class="badge">🏠 Local Delivery</span>
+                </div>
+            </div>
+            <div class="order-form-container">
+                <form id="orderForm" class="order-form">
+                    <div class="form-section">
+                        <h3>📝 Your Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerName">Full Name *</label>
+                                <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="customerEmail">Email *</label>
+                                <input type="email" id="customerEmail" name="customerEmail" required placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerPhone">Phone Number *</label>
+                                <input type="tel" id="customerPhone" name="customerPhone" placeholder="+254XXXXXXXXX" required>
+                                <small>We'll send order updates via SMS</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Order Type *</label>
+                                <div class="order-type-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="orderType" value="pickup" checked>
+                                        <span>🏃 Pickup</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="orderType" value="delivery">
+                                        <span>🚚 Delivery (+Ksh 100)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="deliveryAddressRow" style="display: none;">
+                            <div class="form-group">
+                                <label for="deliveryAddress">Delivery Address *</label>
+                                <input type="text" id="deliveryAddress" name="deliveryAddress" placeholder="Enter your delivery address">
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryTime">Preferred Delivery Time</label>
+                                <select id="deliveryTime" name="deliveryTime">
+                                    <option value="asap">ASAP (30-45 min)</option>
+                                    <option value="9am">9:00 AM</option>
+                                    <option value="10am">10:00 AM</option>
+                                    <option value="11am">11:00 AM</option>
+                                    <option value="12pm">12:00 PM</option>
+                                    <option value="1pm">1:00 PM</option>
+                                    <option value="2pm">2:00 PM</option>
+            <option value="3pm">3:00 PM</option>
+                                    <option value="4pm">4:00 PM</option>
+                                    <option value="5pm">5:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>🛍 Select Your Items</h3>
+                        <div class="menu-selection">
+                            <div id="menuItems" class="menu-grid-selection">
+                                <!-- Items will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>📋 Order Summary</h3>
+                        <div class="order-summary">
+                            <div id="orderSummary" class="summary-items">
+                                <div class="empty-cart">
+                                    <span class="empty-icon">🛒</span>
+                                    <p>Your cart is empty</p>
+                                    <small>Add items from the menu above</small>
+                                </div>
+                            </div>
+                            <div class="total-amount">
+                                <div class="total-row">
+                                    <span>Subtotal:</span>
+                                    <span>Ksh <span id="subtotalAmount">0</span></span>
+                                </div>
+                                <div class="delivery-fee" id="deliveryFeeRow" style="display: none;">
+                                    <span>Delivery:</span>
+                                    <span>Ksh <span id="deliveryFee">100</span></span>
+                                </div>
+                                <div class="total-row grand-total">
+                                    <strong>Total:</strong>
+                                    <span>Ksh <span id="totalAmount">0</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>💬 Special Instructions</h3>
+                        <div class="form-group">
+                            <textarea id="notes" name="notes" rows="3" placeholder="Any special requests? (e.g., extra sugar, less ice, etc.)"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-icon">☕</span>
+                            <span class="btn-text">Place Order</span>
+                        </button>
+                        <button type="button" class="clear-btn" onclick="clearOrderForm()">
+                            <span class="btn-icon">🔄</span>
+                            <span class="btn-text">Clear Form</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="contact-form-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input type="email" id="contactEmail" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number *</label>
+                            <input type="tel" id="contactPhone" name="phone" placeholder="+254XXXXXXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="subject" placeholder="What's this about?">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage" name="message" rows="5" required placeholder="Tell us what's on your mind..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Moi Avenue, Nakuru CBD<br>Next to Nakuru Mall<br>Nakuru, Kenya 20100</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <h3>Hours</h3>
+                    <p>Mon-Fri: 6:00 AM - 9:00 PM<br>Sat-Sun: 6:30 AM - 10:00 PM</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h3>Contact</h3>
+                    <p>Phone: +254 712 345 678<br>Email: hello@nakurucoffee.co.ke</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="coffee-icon">☕</span>
+                    <span class="logo-text">Nakuru Coffee House</span>
+                </div>
+                <p>&copy; 2024 Nakuru Coffee House. Proudly serving Kenyan coffee.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="success-icon">✅</div>
+                <h2>Order Successful!</h2>
+            </div>
+            <div class="modal-body">
+                <div class="order-details">
+                    <div class="order-number">
+                        <strong>Order #<span id="orderNumber">12345</span></strong>
+                    </div>
+                    <div class="order-info">
+                        <div class="info-item">
+                            <span class="info-icon">⏰</span>
+                            <div>
+                                <strong>Estimated Time:</strong>
+                                <span id="estimatedTime">15-20 minutes</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <strong>Location:</strong>
+                                <span id="orderLocation">Nakuru Coffee House</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📱</span>
+                            <div>
+                                <strong>Confirmation:</strong>
+                                <span>SMS sent to your phone</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-items-summary" id="orderItemsSummary">
+                        <!-- Order items will be populated here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="thank-you">Thank you for choosing Nakuru Coffee House! ☕</p>
+                    <div class="modal-actions">
+                        <button class="modal-btn primary" onclick="closeModal()">Continue Shopping</button>
+                        <button class="modal-btn secondary" onclick="printOrder()">Print Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image API Admin Panel (Hidden by default) -->
+    <div id="imageAdminPanel" class="admin-panel" style="display: none;">
+        <div class="admin-content">
+            <h3>🖼️ Image API Switcher</h3>
+            <div class="api-buttons">
+                <button onclick="switchImageAPI('unsplash')" class="api-btn active">Unsplash</button>
+                <button onclick="switchImageAPI('pexels')" class="api-btn">Pexels</button>
+                <button onclick="switchImageAPI('pixabay')" class="api-btn">Pixabay</button>
+                <button onclick="switchImageAPI('unsplashSource')" class="api-btn">Unsplash Random</button>
+            </div>
+            <button onclick="toggleAdminPanel()" class="close-admin">✕ Close</button>
+        </div>
+    </div>
+
+    <!-- Admin Toggle Button -->
+    <button id="adminToggle" onclick="toggleAdminPanel()" class="admin-toggle" title="Switch Image APIs">
+        🖼️
+    </button>
+
+    <script src="image-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
